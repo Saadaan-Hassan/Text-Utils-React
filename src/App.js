@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './Components/Navbar';
 import React, { useState } from 'react'
+import TextForm from './Components/TextForm';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Navbar mode={mode} toggleMode={toggleMode}/>
+      <TextForm/>
     </div>
   );
 }
