@@ -28,7 +28,7 @@ export default function TextForm(props) {
   };
 
   const removeExtraSpaces = () => {
-    let newText = text.split(/[ ]+/)
+    let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
   };
 
@@ -76,6 +76,33 @@ export default function TextForm(props) {
       <button className="btn btn-success mx-1" onClick={clearText}>
         Clear Text
       </button>
+
+      <div className="container text-start my-5">
+        <h2 className="mb-3">Text Report</h2>
+        <div className="px-3">
+          <p>Number of characters: {text.length}</p>
+          <p>
+            Number of Words:{" "}
+            {text.length > 0
+              ? text.split(" ").filter((a) => {
+                  return a !== "";
+                }).length
+              : "0"}
+          </p>
+          <p>
+            Seconds required to read this text:{" "}
+            {0.00769 *
+              (text.length > 0
+                ? text.split(" ").filter((a) => {
+                    return a !== "";
+                  }).length
+                : "0") *
+              60}
+          </p>
+        </div>
+        <h2>Text Preview</h2>
+        <p className="px-3">{text === ''?"Enter the text above to preview it here": text}</p>
+      </div>
     </>
   );
 }

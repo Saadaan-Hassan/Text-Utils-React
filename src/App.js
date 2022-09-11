@@ -20,7 +20,7 @@ function App() {
       style={{ backgroundColor: mode === "light" ? "white" : "gray", color: mode ==="light"? "black":"white" }}
     >
       <Navbar mode={mode} toggleMode={toggleMode} />
-      <div className="container">
+      <div className="container py-5">
         <TextForm mode={mode}/>
       </div>
     </div>
